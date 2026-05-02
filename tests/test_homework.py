@@ -347,6 +347,7 @@ def test_13():
     with open("homework/pregunta_13.sql", encoding="utf-8") as file:
         query = file.read()
     result = pd.read_sql_query(query, conn).to_dict()
+    print(result)
 
     # Round the results to 2 decimal places
     result['avg(c12)'] = {k: round(v, 2) for k, v in result['avg(c12)'].items()}
